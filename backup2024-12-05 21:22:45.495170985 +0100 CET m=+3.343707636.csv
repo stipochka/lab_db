@@ -1,8 +1,0 @@
-id,name,salary,working_since,is_official
-0,stepa                           ,2.00,2000-01-01,false
-1,stepa                           ,2.00,2011-02-02,true
-2,stepa                           ,30.00,2000-01-01,false
-4,stepa                           ,5.00,2020-01-01,true
-5,stepa                           ,2.00,2020-01-12,false
-6,sta                             ,33.00,2020-01-01,false
-8,stepa                           ,7.00,2020-01-10,false
