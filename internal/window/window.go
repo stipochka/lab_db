@@ -436,6 +436,7 @@ func (w *Window) Show(windowName string) {
 
 			newRecordSalary, err := strconv.ParseFloat(enterSalaryToChange.Text, 64)
 			if err != nil {
+				fmt.Println(err)
 				newRecordSalary = -0.1
 			}
 
@@ -485,6 +486,18 @@ func (w *Window) Show(windowName string) {
 
 			if len(enterNameToChange.Text) != 0 {
 				newRecord.Name = enterNameToChange.Text
+			}
+
+			if newSalary, err := strconv.ParseFloat(enterSalaryToChange.Text, 64); err == nil {
+				newRecord.Salary = newSalary
+			}
+
+			if newDate, err := time.Parse("2006-01-02", enterDateToChange.Text); err == nil {
+				newRecord.WorkingSince = newDate
+			}
+
+			if newIsOfficial, err := strconv.ParseBool(enterIsOfficialToChange.Text); err == nil {
+				newRecord.IsOfficial = newIsOfficial
 			}
 
 			err = record.ChangeRecord(newRecord, w.DbFile)
